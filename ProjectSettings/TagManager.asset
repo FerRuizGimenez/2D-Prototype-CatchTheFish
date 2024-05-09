@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FishDestroyer
   - Fish
+  - LifeImageUI
   layers:
   - Default
   - TransparentFX
