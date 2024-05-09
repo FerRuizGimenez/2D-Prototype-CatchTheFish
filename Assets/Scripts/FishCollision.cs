@@ -6,7 +6,16 @@ public class FishCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "FishDestroyer")
+        if (collision.gameObject.tag == "Player")
+        {
             Destroy(gameObject);
+            ScoreManager.instance.AddScore(); 
+        }
+
+        if (collision.gameObject.tag == "FishDestroyer")
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
