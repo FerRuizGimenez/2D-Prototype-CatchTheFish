@@ -5,11 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private GameObject gameOverPanel;
     [SerializeField]
     private bool isGameOver = false;
     private void Awake()
     {
         instance = this;
+        gameOverPanel = GameObject.Find("Game Over Panel");
+        gameOverPanel.SetActive(false);
     }
     private void Start()
     {
@@ -26,5 +29,6 @@ public class GameManager : MonoBehaviour
     {
         FishSpawner.instance.StopSpawnFisher();
         GameObject.Find("Player").GetComponent<PlayerController>().IsMoving = false;
+        gameOverPanel.SetActive(true);
     }
 }
