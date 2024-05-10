@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Variables
-    private bool isMoving = true;
+    public bool IsMoving { get => _isMoving; set => _isMoving = value; }
+    private bool _isMoving;
     [SerializeField]
     private float moveSpeed;
     private Transform  myTransform;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if(isMoving)
+        if(_isMoving)
         {
             SetMovement();
         }

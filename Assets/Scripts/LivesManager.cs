@@ -24,9 +24,8 @@ public class LivesManager : MonoBehaviour
         }
         if(livesCounter <= 0)
         {
-            print("GameOver");
+            GameManager.instance.GameOver();
         } 
-        print(livesCounter);
     }
 
     private void SetLivesImagesUI()
